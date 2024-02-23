@@ -1,46 +1,53 @@
 const functions = require("./functions.js");
 
 describe('multiply function', () => {
-  it('should be return multiple when I sent two numbers', () => {
-    //ARRANGE
+  it('Muestra el resultado de la multiplicacion de las 2 variables', () => {
+    // Arrange
+    const num1 = 2;
+    const num2 = 3;
 
-    //ACT
+    // Act
+    const result = functions.multiply(num1, num2);
 
-    //ASSERT
-
-  })
+    // Assert
+    expect(result).toBe(6);
+  });
 });
 
-
 describe('isNull function', () => {
-  it('should be return null', () => {
-    //ARRANGE
+  it('Muestra un retorno nulo', () => {
+    // Arrange
 
-    //ACT
+    // Act
+    const result = functions.isNull();
 
-    //ASSERT
-
+    // Assert
+    expect(result).toBeNull();
   });
 });
 
 describe('checkTruthy function', () => {
-  it('should be return true when I sent true', () => {
-    //ARRANGE
+  it('Muestra un retorno verdadero si envio un paramentro verdadero', () => {
+    // Arrange
+    const value = true;
 
-    //ACT
+    // Act
+    const result = functions.checkTruthy(value);
 
-    //ASSERT
-
+    // Assert
+    expect(result).toBe(true);
   });
-})
+});
 
 describe('addLastName function', () => {
-  it('should be return Pepito Perez when I sent Perez', () => {
-    //ARRANGE
+  it('debe mostrar un retorno con un objeto con su nombre y Apellido', () => {
+    // Arrange
+    const lastname = 'Perez';
 
-    //ACT
+    // Act
+    const result = functions.addLastName(lastname);
 
-    //ASSERT
-
+    // Assert
+    expect(result).toEqual({ firstname: 'Pepito', lastname: 'Perez' });
   });
-})
+});
